@@ -68,7 +68,7 @@ function loadPhotos() {
     .then((response) => response.json())
     .then((data) => displayPhotos(data));
 }
-loadPhotos();
+// loadPhotos();
 function displayPhotos(photos) {
   const photoContainer = document.getElementById("photos");
   for (const photo of photos) {
