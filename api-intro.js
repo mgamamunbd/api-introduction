@@ -1,21 +1,24 @@
 /** @format */
-
+//Load Data button
 function loadData() {
   fetch("https://jsonplaceholder.typicode.com/todos/1")
     .then((response) => response.json())
-    .then((data) => console.log(data));
+    .then((data) => displayData(data));
 }
+//load data
 
+function displayData() {
+  console.log(data);
+  const div = document.getElementById("data");
+  const p = document.createElement("p");
+  p.innerHTML = "Hello World";
+  div.appendChild(p);
+}
+// Load Users button
 function loadUsers() {
   return fetch("https://jsonplaceholder.typicode.com/users")
     .then((response) => response.json())
     .then((data) => displayUsers(data));
-}
-
-function loadPosts() {
-  return fetch("https://jsonplaceholder.typicode.com/posts")
-    .then((response) => response.json())
-    .then((data) => displayPosts(data));
 }
 // display users
 function displayUsers(data) {
@@ -27,6 +30,13 @@ function displayUsers(data) {
     ul.appendChild(li);
   }
 }
+// Load Posts button
+function loadPosts() {
+  return fetch("https://jsonplaceholder.typicode.com/posts")
+    .then((response) => response.json())
+    .then((data) => displayPosts(data));
+}
+
 //display posts
 function displayPosts(data) {
   const ul = document.getElementById("posts");
@@ -37,14 +47,9 @@ function displayPosts(data) {
     ul.appendChild(li);
   }
 }
-//load data
-function loadData() {
-  loadUsers();
-  loadPosts();
-}
 
 //album section
-
+// Load Albums button
 function loadAlbums() {
   fetch("https://jsonplaceholder.typicode.com/albums")
     .then((response) => response.json())
@@ -62,7 +67,7 @@ function displayAlbums(albums) {
   }
 }
 
-//load photos
+//load photos button
 function loadPhotos() {
   fetch("https://jsonplaceholder.typicode.com/photos")
     .then((response) => response.json())
@@ -75,5 +80,36 @@ function displayPhotos(photos) {
     const img = document.createElement("img");
     img.src = photo.thumbnailUrl;
     photoContainer.appendChild(img);
+  }
+}
+
+function loadComments() {
+  fetch("https://jsonplaceholder.typicode.com/comments")
+    .then((response) => response.json())
+    .then((data) => displayComments(data));
+}
+
+function displayComments(comments) {
+  const commentContainer = document.getElementById("comments");
+  for (const comment of comments) {
+    const p = document.createElement("p");
+    // p.innerHTML = comment.name;
+    p.innerHTML = comment.body;
+    commentContainer.appendChild(p);
+  }
+}
+
+function toDos() {
+  fetch("https://jsonplaceholder.typicode.com/todos")
+    .then((response) => response.json())
+    .then((data) => displayToDos(data));
+}
+
+function displayToDos(toDos) {
+  const toDoContainer = document.getElementById("toDos");
+  for (const toDo of toDos) {
+    const p = document.createElement("p");
+    p.innerHTML = toDo.title;
+    toDoContainer.appendChild(p);
   }
 }

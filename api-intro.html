@@ -21,9 +21,7 @@
     <main class="container">
       <section class="p3">
         <h2 class="p-3 text-primary">Hello API</h2>
-        <!-- data load here -->
-        <ul id="users"></ul>
-        <ul id="posts"></ul>
+
         <!-- button group -->
         <div
           class="btn-group border p-2 mx-auto p-3 rounded container"
@@ -31,43 +29,68 @@
           aria-label="Basic mixed styles example"
         >
           <button type="button" class="btn btn-danger p-1" onclick="loadData()">
-            Load Data
+            Data
           </button>
           <button
             type="button"
             class="btn btn-warning p-1"
             onclick="loadUsers()"
           >
-            Load Users
+            Users
           </button>
           <button
             type="button"
             class="btn btn-success p-1"
             onclick="loadPosts()"
           >
-            Load Posts
+            Posts
           </button>
           <button
             type="button"
             class="btn btn-danger p-1"
             onclick="loadAlbums()"
           >
-            Load Album
+            Album
           </button>
           <button
             type="button"
             class="btn btn-warning p-1"
             onclick="loadPhotos()"
           >
-            Load Photos
+            Photos
+          </button>
+          <button
+            type="button"
+            class="btn btn-success p-1"
+            onclick="loadComments()"
+          >
+            Comments
+          </button>
+          <button type="button" class="btn btn-danger p-1" onclick="toDos()">
+            ToDos
           </button>
         </div>
+        <section class="p-3 rounded">
+          <ul id="data"></ul>
+        </section>
+        <section class="p-3 rounded">
+          <ul id="users"></ul>
+        </section>
+        <section class="p-3 rounded">
+          <ul id="posts"></ul>
+        </section>
       </section>
-      <section class="p-3">
+      <section class="p-3 rounded">
         <div id="albums"></div>
       </section>
-      <section class="p-3">
+      <section class="p-3 rounded justify-content-center align-items-center">
         <div id="photos"></div>
+      </section>
+      <section class="p-3 rounded justify-content-center align-items-center">
+        <div id="comments"></div>
+      </section>
+      <section class="p-3 rounded justify-content-center align-items-center">
+        <div id="toDos"></div>
       </section>
     </main>
 
